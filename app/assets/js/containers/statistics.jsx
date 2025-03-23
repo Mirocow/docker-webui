@@ -274,8 +274,8 @@ var TableRow = React.createClass({
         percent: stat.memory_stats.usage * 100 / stat.memory_stats.limit
       };
       network = {
-        in: app.func.byteFormat(stat.networks.eth0.rx_bytes),
-        out: app.func.byteFormat(stat.networks.eth0.tx_bytes)
+        in: app.func.byteFormat(stat.networks.eth0.rx_bytes ?? 0),
+        out: app.func.byteFormat(stat.networks.eth0.tx_bytes ?? 0)
       };
     }
     return (
